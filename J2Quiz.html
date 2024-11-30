@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderate Java MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1d4f9;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a8abcc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Moderate Java MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='QuizDash.html';">Back</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is used to handle exceptions in Java?",
+                options: ["try", "catch", "finally", "All of the above"],
+                answer: "All of the above"
+            },
+            {
+                question: "What will be the result of the following code?\n\njava\nint x = 10;\nSystem.out.println(x++);\n",
+                options: ["10", "11", "12", "Compilation error"],
+                answer: "10"
+            },
+            {
+                question: "What does the this keyword refer to in a non-static method?",
+                options: ["The current class", "The current object", "The superclass", "The method itself"],
+                answer: "The current object"
+            },
+            {
+                question: "What is the purpose of the super keyword in Java?",
+                options: ["To call a method in the superclass", "To declare a variable as static", "To create a new object", "To handle exceptions"],
+                answer: "To call a method in the superclass"
+            },
+            {
+                question: "What will the following code print?\n\njava\nString str1 = \"Java\";\nString str2 = new String(\"Java\");\nSystem.out.println(str1 == str2);\n",
+                options: ["true", "false", "null", "error"],
+                answer: "false"
+            },
+            {
+                question: "What is the difference between == and .equals() in Java?",
+                options: ["== compares object references, while .equals() compares object values", "Both compare object references", "Both compare object values", "== compares object values, while .equals() compares object references"],
+                answer: "== compares object references, while .equals() compares object values"
+            },
+            {
+                question: "Which method is used to compare two strings lexicographically in Java?",
+                options: ["compareTo()", "compare()", "equals()", "compareWith()"],
+                answer: "compareTo()"
+            },
+            {
+                question: "What is the result of the following code snippet?\n\njava\nint[] arr = {1, 2, 3};\nSystem.out.println(arr.length);\n",
+                options: ["3", "2", "1", "Compilation error"],
+                answer: "3"
+            },
+            {
+                question: "Which of the following collections allows duplicates in Java?",
+                options: ["HashSet", "LinkedHashSet", "TreeSet", "ArrayList"],
+                answer: "ArrayList"
+            },
+            {
+                question: "Which of the following statements is true about abstract classes in Java?",
+                options: ["An abstract class can be instantiated", "An abstract class cannot have concrete methods", "An abstract class can have both abstract and concrete methods", "An abstract class must have at least one abstract method"],
+                answer: "An abstract class can have both abstract and concrete methods"
+            }
+        ];
+
+       
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

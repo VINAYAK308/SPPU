@@ -1,0 +1,157 @@
+body, h1, p, ol, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color:#c1e9f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:#98c3ce;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header styling */
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+/* Video list styling */
+.video ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.video li {
+    background-color: #e9e9e9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.video a {
+    text-decoration: none;
+    color: #454545;
+    font-weight: bold;
+    display: block;
+}
+
+.video li:hover {
+    background-color: #dcdee2;
+    transform: translateY(-5px);
+}
+
+/* Hover effect for links */
+.video a:hover {
+    color: #86acc9;
+    text-decoration: underline;
+}
+
+/* Style for the PDF section */
+/* .left {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    animation: popIn 0.7s ease-in-out;
+} */
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .video li {
+        padding: 10px;
+    }
+}
+
+.navlink {
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 4px 0;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+.navlink:hover {
+    background-color: #0056b3;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

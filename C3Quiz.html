@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced C++ MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(201, 201, 159);;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(152, 160, 134);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Advanced C++ MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p><a class="navlink" id="Home" onclick="window.location.href='QuizDash.html';">Back</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What will be the output of the following code?\n\ncpp\n#include <iostream>\nusing namespace std;\nint main() {\n    int a = 10;\n    int &ref = a;\n    ref++;\n    cout << a << endl;\n    return 0;\n}\n",
+                options: ["10", "11", "0", "Compilation error"],
+                answer: "11"
+            },
+            {
+                question: "Which of the following is correct about constructors in C++?",
+                options: ["Constructors can be virtual", "Constructors cannot be overloaded", "Constructors are automatically called when an object is created", "Constructors can return a value"],
+                answer: "Constructors are automatically called when an object is created"
+            },
+            {
+                question: "What does the keyword 'explicit' do in C++?",
+                options: ["Prevents a function from being inherited", "Prevents automatic type conversion", "Makes a function inline", "Prevents a class from being instantiated"],
+                answer: "Prevents automatic type conversion"
+            },
+            {
+                question: "What is the output of the following code?\n\ncpp\n#include <iostream>\nusing namespace std;\nvoid foo(int a) {\n    cout << a << endl;\n}\nint main() {\n    int x = 10;\n    foo(x++);\n    cout << x << endl;\n    return 0;\n}\n",
+                options: ["10 10", "11 10", "10 11", "Compilation error"],
+                answer: "10 11"
+            },
+            {
+                question: "What is the correct way to declare a pointer to a constant integer in C++?",
+                options: ["int* const ptr;", "const int* ptr;", "int const* ptr;", "Both const int* ptr; and int const* ptr;"],
+                answer: "Both const int* ptr; and int const* ptr;"
+            },
+            {
+                question: "What is the purpose of the 'mutable' keyword in C++?",
+                options: ["Allows modification of a constant object", "Enables dynamic memory allocation", "Allows modification of a member even if the containing object is const", "Disables the constness of a pointer"],
+                answer: "Allows modification of a member even if the containing object is const"
+            },
+            {
+                question: "What is the output of the following code?\n\ncpp\n#include <iostream>\nusing namespace std;\nclass Base {\npublic:\n    virtual void show() { cout << \"Base\"; }\n};\nclass Derived : public Base {\npublic:\n    void show() { cout << \"Derived\"; }\n};\nint main() {\n    Base *b;\n    Derived d;\n    b = &d;\n    b->show();\n    return 0;\n}\n",
+                options: ["Base", "Derived", "Compilation error", "Runtime error"],
+                answer: "Derived"
+            },
+            {
+                question: "What is the output of the following code?\n\ncpp\n#include <iostream>\nusing namespace std;\nint main() {\n    int x = 10;\n    int y = 20;\n    x = y + (y = x) - y;\n    cout << x << endl;\n    return 0;\n}\n",
+                options: ["0", "10", "20", "Undefined behavior"],
+                answer: "10"
+            },
+            {
+                question: "What will be the result of the following code?\n\ncpp\n#include <iostream>\nusing namespace std;\nint main() {\n    int x = 5;\n    if (x == 5)\n        cout << \"Five\";\n    else\n        cout << \"Not Five\";\n    return 0;\n}\n",
+                options: ["Five", "Not Five", "Compilation error", "Runtime error"],
+                answer: "Five"
+            },
+            {
+                question: "What will the following code output?\n\ncpp\n#include <iostream>\nusing namespace std;\nclass Test {\n    int x;\npublic:\n    Test() : x(10) {}\n    void print() { cout << x << endl; }\n};\nint main() {\n    Test obj;\n    obj.print();\n    return 0;\n}\n",
+                options: ["0", "10", "Garbage value", "Compilation error"],
+                answer: "10"
+            },
+            {
+                question: "Which of the following is true about destructors in C++?",
+                options: ["Destructors can be overloaded", "Destructors must be public", "Destructors can be virtual", "Destructors can return a value"],
+                answer: "Destructors can be virtual"
+            }
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

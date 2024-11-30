@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Puzzle Game</title>
+    <link rel="stylesheet" href="P4Game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Python Braintreasure Level 4</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What is the result of this closure?</p>
+                <pre><code>def outer(x):
+    def inner(y):
+        return x + y
+    return inner
+
+f = outer(5)
+print(f(10))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What will be the output of this recursive function?</p>
+                <pre><code>def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(6))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>What will this decorator output?</p>
+                <pre><code>def decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What is the result of multiple inheritance in this case?</p>
+                <pre><code>class A:
+    def greet(self):
+        return "Hello from A"
+
+class B:
+    def greet(self):
+        return "Hello from B"
+
+class C(A, B):
+    pass
+
+obj = C()
+print(obj.greet())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>class Base:
+    def _init_(self):
+        print("Base class constructor")
+
+class Derived(Base):
+    def _init_(self):
+        super()._init_()
+        print("Derived class constructor")
+
+d = Derived()</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What will this lambda function return?</p>
+                <pre><code>def make_multiplier(x):
+    return lambda y: x * y
+
+mul = make_multiplier(3)
+print(mul(5))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>What will be the output of this code with method overriding?</p>
+                <pre><code>class Parent:
+    def show(self):
+        return "Parent's show method"
+
+class Child(Parent):
+    def show(self):
+        return "Child's show method"
+
+c = Child()
+print(c.show())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What is the result of method resolution order in this case?</p>
+                <pre><code>class X:
+    def process(self):
+        return "Process from X"
+
+class Y(X):
+    def process(self):
+        return "Process from Y"
+
+class Z(Y):
+    pass
+
+z = Z()
+print(z.process())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>What is the output of this class method example?</p>
+                <pre><code>class Example:
+    count = 0
+
+    @classmethod
+    def increment(cls):
+        cls.count += 1
+
+Example.increment()
+print(Example.count)</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What will this recursive function return?</p>
+                <pre><code>def sum_of_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + sum_of_digits(n // 10)
+
+print(sum_of_digits(1234))</code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='PuzzleDash.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="P4Game.js"></script>
+</body>
+</html>

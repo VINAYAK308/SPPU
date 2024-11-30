@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Puzzle Game</title>
+    <link rel="stylesheet" href="J2Game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Java Brain Teasers</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What will be the output of this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        System.out.println(a + b);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What is the output of this method?</p>
+                <pre><code>public class Main {
+    public static void increment(int x) {
+        x += 5;
+        System.out.println(x);
+    }
+
+    public static void main(String[] args) {
+        int a = 10;
+        increment(a);
+        System.out.println(a);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>What will be printed by this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int x = 3;
+        int y = x++;
+        System.out.println(y + " " + x);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = -5;
+        if (a > 0) {
+            System.out.println("Positive");
+        } else {
+            System.out.println("Negative");
+        }
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What is the result of the following code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        System.out.println(arr[3]); // Out of bounds access
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What will be the output of this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        final int x = 10;
+        // x++; // Uncommenting this line will cause a compilation error
+        System.out.println(x);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>What does this code output?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        int c = (a < b) ? a : b;
+        System.out.println(c);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What is the output of this recursive method?</p>
+                <pre><code>public class Main {
+    public static void recursive(int n) {
+        if (n > 0) {
+            System.out.print(n + " ");
+            recursive(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        recursive(3);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>What will this code print?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        for (int i = 0; i < 5; i++) {
+            a += i;
+        }
+        System.out.println(a);
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What is the output of this class method example?</p>
+                <pre><code>public class Example {
+    static int count = 0;
+
+    Example() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        Example e1 = new Example();
+        Example e2 = new Example();
+        System.out.println(Example.count);
+    }
+}</code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='PuzzleDash.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="C4Game.js"></script>
+</body>
+</html>

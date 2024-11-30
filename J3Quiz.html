@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Java MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1d4f9;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a8abcc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Advanced Java MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='QuizDash.html';">Back</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What will be the output of the following code?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        Integer a = 128;\n        Integer b = 128;\n        System.out.println(a == b);\n        System.out.println(a.equals(b));\n    }\n}\n",
+                options: ["true true", "false true", "true false", "false false"],
+                answer: "false true"
+            },
+            {
+                question: "Which method is used to ensure that an object is immutable in Java?",
+                options: ["finalize()", "toString()", "clone()", "final keyword for class and fields"],
+                answer: "final keyword for class and fields"
+            },
+            {
+                question: "What will the following code output?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        try {\n            throw new Exception(\"Error\");\n        } catch (Exception e) {\n            System.out.println(\"Caught\");\n        } finally {\n            System.out.println(\"Finally\");\n        }\n    }\n}\n",
+                options: ["Caught Finally", "Finally", "Caught", "Error"],
+                answer: "Caught Finally"
+            },
+            {
+                question: "What is the difference between HashMap and TreeMap in Java?",
+                options: ["HashMap maintains insertion order while TreeMap does not", "TreeMap is sorted while HashMap is not", "HashMap is synchronized while TreeMap is not", "TreeMap allows null keys while HashMap does not"],
+                answer: "TreeMap is sorted while HashMap is not"
+            },
+            {
+                question: "What will the following code print?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        String s1 = \"Hello\";\n        String s2 = s1.intern();\n        String s3 = new String(\"Hello\");\n        System.out.println(s1 == s2);\n        System.out.println(s1 == s3.intern());\n    }\n}\n",
+                options: ["true true", "false true", "true false", "false false"],
+                answer: "false true"
+            },
+            {
+                question: "What will be the output of the following code?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        String s1 = \"abc\";\n        String s2 = \"ab\" + \"c\";\n        System.out.println(s1 == s2);\n    }\n}\n",
+                options: ["true", "false", "Compilation error", "Runtime error"],
+                answer: "true"
+            },
+            {
+                question: "Which of the following statements is true about Java's synchronized keyword?",
+                options: ["It allows multiple threads to access a method simultaneously", "It ensures that only one thread can access a block of code at a time", "It is used to make a variable volatile", "It is used to declare a method as final"],
+                answer: "It ensures that only one thread can access a block of code at a time"
+            },
+            {
+                question: "What is the purpose of the volatile keyword in Java?",
+                options: ["To make a variable thread-safe", "To allow a variable to be accessed by multiple threads", "To prevent a variable from being optimized by the compiler", "To ensure a variable is always initialized before being used"],
+                answer: "To prevent a variable from being optimized by the compiler"
+            },
+            {
+                question: "What will be the result of the following code?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        String s1 = new String(\"test\");\n        String s2 = new String(\"test\");\n        System.out.println(s1 == s2);\n        System.out.println(s1.equals(s2));\n    }\n}\n",
+                options: ["true true", "false true", "true false", "false false"],
+                answer: "false true"
+            },
+            {
+                question: "What is the output of the following code?\n\njava\npublic class Test {\n    public static void main(String[] args) {\n        String str = \"Java\";\n        str.concat(\" Programming\");\n        System.out.println(str);\n    }\n}\n",
+                options: ["Java Programming", "Java", "JavaProgramming", "Compilation error"],
+                answer: "Java"
+            }
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

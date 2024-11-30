@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Puzzle Game</title>
+    <link rel="stylesheet" href="P5Game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Python Braintreasure Level 5</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What will this generator return?</p>
+                <pre><code>def count_down(num):
+    while num > 0:
+        yield num
+        num -= 1
+
+gen = count_down(5)
+print(next(gen))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What will the output be in this metaclass example?</p>
+                <pre><code>class Meta(type):
+    def __new__(cls, name, bases, dct):
+        print(f'Creating {name}')
+        return super().__new__(cls, name, bases, dct)
+
+class A(metaclass=Meta):
+    pass
+
+a = A()</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>What is the result of this context manager?</p>
+                <pre><code>class ContextManager:
+    def __enter__(self):
+        print("Enter")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exit")
+
+with ContextManager() as cm:
+    print("Inside context")</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What will this decorator output with arguments?</p>
+                <pre><code>def decorator_with_args(arg):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            print(f"Decorator argument: {arg}")
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@decorator_with_args("test")
+def say_hello():
+    print("Hello!")
+
+say_hello()</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What will this closure return?</p>
+                <pre><code>def make_power(n):
+    def inner(x):
+        return x ** n
+    return inner
+
+power_of_2 = make_power(2)
+print(power_of_2(3))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What is the result of this coroutine?</p>
+                <pre><code>def simple_coroutine():
+    print("Coroutine starts")
+    x = yield
+    print(f"Received: {x}")
+
+coro = simple_coroutine()
+next(coro)
+coro.send(10)</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>What is the output of this multiple inheritance case with super()?</p>
+                <pre><code>class A:
+    def __init__(self):
+        print("A's init")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("B's init")
+
+class C(A):
+    def __init__(self):
+        super().__init__()
+        print("C's init")
+
+class D(B, C):
+    def __init__(self):
+        super().__init__()
+        print("D's init")
+
+d = D()</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What will this code output with list comprehension and generator expression?</p>
+                <pre><code>squares = [x**2 for x in range(5)]
+print(squares)
+
+gen_squares = (x**2 for x in range(5))
+print(next(gen_squares))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>What is the output of this property method?</p>
+                <pre><code>class Person:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+p = Person("John")
+print(p.name)
+p.name = "Doe"
+print(p.name)</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What is the output of this advanced usage of defaultdict?</p>
+                <pre><code>from collections import defaultdict
+
+dd = defaultdict(lambda: 'N/A')
+dd['name'] = 'Alice'
+print(dd['name'])
+print(dd['age'])</code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='PuzzleDash.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="P5Game.js"></script>
+</body>
+</html>

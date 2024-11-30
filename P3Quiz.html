@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Python MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c1e9f3;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a5cfda;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Advanced Python MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='QuizDash.html';">Back</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What will be the output of the following Python code?\n\npython\nx = {1, 2, 3}\ny = {3, 4, 5}\nprint(x & y)\n",
+                options: ["{1, 2, 3, 4, 5}", "{3}", "{1, 2, 3}", "{}"],
+                answer: "{3}"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\nx = {1: 'a', 2: 'b'}\ny = x.copy()\ny[3] = 'c'\nprint(x)\n",
+                options: ["{1: 'a', 2: 'b', 3: 'c'}", "{1: 'a', 2: 'b'}", "{1: 'a', 2: 'b', 3: 'c'}", "{}"],
+                answer: "{1: 'a', 2: 'b'}"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\nclass MyClass:\n    def __init__(self, x):\n        self.x = x\n    def __add__(self, other):\n        return self.x + other\n\nobj1 = MyClass(5)\nobj2 = 10\nprint(obj1 + obj2)\n",
+                options: ["15", "5", "10", "Error"],
+                answer: "15"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\nfrom itertools import permutations\nprint(list(permutations([1, 2, 3], 2)))\n",
+                options: ["[[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]", "[[1, 2], [2, 1]]", "[[1, 2], [1, 3], [2, 3]]", "[[1, 2], [2, 3], [3, 1]]"],
+                answer: "[[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]"
+            },
+            {
+                question: "Which Python function can be used to ensure that a variable is of a certain type at runtime?",
+                options: ["isinstance()", "type()", "assert", "check_type()"],
+                answer: "isinstance()"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)\n",
+                options: ["[1, 2, 3, 4]", "[1, 2, 3]", "[4, 1, 2, 3]", "[1, 2, 3, 4, 4]"],
+                answer: "[1, 2, 3, 4]"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\nimport json\nprint(json.dumps({'a': 1, 'b': 2}))\n",
+                options: ["{'a': 1, 'b': 2}", "{\"a\": 1, \"b\": 2}", "Error", "['a': 1, 'b': 2]"],
+                answer: "{\"a\": 1, \"b\": 2}"
+            },
+            {
+                question: "What is the output of the following Python code?\n\npython\nx = [1, 2, 3]\nprint(x[-1:0:-1])\n",
+                options: ["[3, 2]", "[3, 2, 1]", "[]", "[2, 1]"],
+                answer: "[3, 2]"
+            },
+            {
+                question: "What will be the output of the following Python code?\n\npython\ndef func(x, y=[]):\n    y.append(x)\n    return y\n\nprint(func(10))\nprint(func(20, []))\nprint(func(30))\n",
+                options: ["[[10], [20], [10, 30]]", "[[10], [20], [30]]", "[[10], [20, 30]]", "[[10], [20], [10, 20, 30]]"],
+                answer: "[[10], [20], [10, 30]]"
+            },
+            {
+                question: "What will be the result of the following Python code?\n\npython\nclass A:\n    def __init__(self, x):\n        self.x = x\n    def __str__(self):\n        return f'A with x={self.x}'\n\nclass B(A):\n    def __init__(self, x, y):\n        super().__init__(x)\n        self.y = y\n    def __str__(self):\n        return f'B with x={self.x} and y={self.y}'\n\nobj = B(1, 2)\nprint(obj)\n",
+                options: ["B with x=1 and y=2", "A with x=1 and y=2", "B with x=1", "A with x=1"],
+                answer: "B with x=1 and y=2"
+            }
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>
+
+
+        

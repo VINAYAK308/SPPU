@@ -1,0 +1,283 @@
+/* General Reset
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   color: #333;
+   background-color: #f8f9fa;
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto;
+   padding: 0 20px;
+}
+
+.header {
+   background-color: #006633;
+   color: #ffcc33;
+   padding: 20px;
+   text-align: center;
+}
+
+.header h1 {
+   font-size: 2rem;
+   margin: 0;
+}
+
+.menu {
+   background-color: #f1f1f1;
+   padding: 20px;
+}
+
+.menu ul {
+   list-style: none;
+   padding: 0;
+}
+
+.menu li {
+   margin: 10px 0;
+}
+
+.menu a {
+   color: #006633;
+   font-weight: bold;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.menu a:hover {
+   color: #ffcc33;
+}
+
+.content {
+   padding: 20px;
+   line-height: 1.6;
+}
+
+.content section ul li {
+   margin-bottom: 10px;
+}
+
+.content a {
+   color: #006633;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.content a:hover {
+   color: #ffcc33;
+}
+
+.footer {
+   background-color: #006633;
+   color: #ffcc33;
+   text-align: center;
+   padding: 10px;
+}
+
+
+.header, .footer, .menu ul li, .content a {
+   opacity: 0;
+   transform: translateY(-10px);
+   animation: fadeInUp 0.6s ease forwards;
+}
+
+.menu a, .content a {
+   position: relative;
+}
+
+.menu a:hover, .content a:hover {
+   color: #ffcc33;
+   font-weight: bold;
+}
+
+@keyframes fadeInUp {
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+
+@media (max-width: 768px) {
+   .container {
+       padding: 0;
+   }
+
+   .menu {
+       padding: 10px;
+       text-align: center;
+   }
+
+   .menu ul {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+
+   .menu li {
+       margin: 5px;
+   }
+
+   .content {
+       padding: 10px;
+   }
+
+   .header h1 {
+       font-size: 1.5rem;
+   }
+} */
+
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   color: #333;
+   background-color: #eaeaea; /* Light grey background */
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto;
+   padding: 0 20px;
+}
+
+.header {
+   background-color: #4b4b4b; /* Dark grey */
+   color: #d9d9d9; /* Soft grey for contrast */
+   padding: 20px;
+   text-align: center;
+}
+
+.header h1 {
+   font-size: 2rem;
+   margin: 0;
+}
+
+.menu {
+   background-color: #cfcfcf; /* Medium grey */
+   padding: 20px;
+}
+
+.menu ul {
+   list-style: none;
+   padding: 0;
+}
+
+.menu li {
+   margin: 10px 0;
+}
+
+.menu a {
+   color: #4b4b4b; /* Dark grey */
+   font-weight: bold;
+   text-decoration: none;
+   transition: all 0.3s ease;
+}
+
+.menu a:hover {
+   color: #000; /* Black for hover */
+   background-color: #d9d9d9; /* Soft grey background */
+   padding: 5px;
+   border-radius: 5px;
+}
+
+.content {
+   padding: 20px;
+   line-height: 1.6;
+   background-color: #f5f5f5; /* Very light grey */
+   border-radius: 8px;
+}
+
+.content section ul li {
+   margin-bottom: 10px;
+}
+
+.content a {
+   color: #4b4b4b;
+   text-decoration: none;
+   transition: all 0.3s ease;
+}
+
+.content a:hover {
+   color: #000; /* Black for hover */
+   text-decoration: underline;
+}
+
+.footer {
+   background-color: #4b4b4b; /* Dark grey */
+   color: #d9d9d9; /* Soft grey for contrast */
+   text-align: center;
+   padding: 10px;
+   margin-top: 20px;
+   border-top: 2px solid #d9d9d9;
+}
+
+/* Animations */
+.header, .footer, .menu ul li, .content a {
+   opacity: 0;
+   transform: translateY(-10px);
+   animation: fadeInUp 0.6s ease forwards;
+}
+
+.menu a, .content a {
+   position: relative;
+}
+
+@keyframes fadeInUp {
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .container {
+       padding: 0;
+   }
+
+   .menu {
+       padding: 10px;
+       text-align: center;
+   }
+
+   .menu ul {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+
+   .menu li {
+       margin: 5px;
+   }
+
+   .content {
+       padding: 10px;
+   }
+
+   .header h1 {
+       font-size: 1.5rem;
+   }
+}
+
+/* Hover Effects */
+.menu a:hover, .content a:hover {
+   color: #000; /* Black text */
+   font-weight: bold;
+   background-color: #d9d9d9; /* Light grey background */
+   padding: 4px 8px;
+   border-radius: 4px;
+   text-decoration: none;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

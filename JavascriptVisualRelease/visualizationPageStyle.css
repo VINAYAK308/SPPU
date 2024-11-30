@@ -1,0 +1,258 @@
+/* @charset "utf-8";
+
+
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color: #000000;
+}
+
+
+
+
+.VisualizationMainPage #mainContent {
+	background: #FFFFFF;
+}
+
+
+
+.VisualizationMainPage #container {
+
+
+	background: #FFFFFF;
+	text-align: left; 
+}
+
+
+.VisualizationMainPage #algoControlSection
+{
+	background: #DDEEDD; 
+	color:#000000; 
+
+}
+
+
+.VisualizationMainPage #generalAnimationControlSection
+{
+	background: #DDEEDD; 
+	color:#006600; 
+
+}
+
+.VisualizationMainPage  #header { 
+	background: #006633; 
+	color:#ffCC33;
+	padding: 0 10px 0 20px; 
+  
+} 
+ 
+.VisualizationMainPage #header  A:visited 
+	  { text-decoration:none;
+        color:#ffCC33; 
+	   }
+	   
+	   
+.VisualizationMainPage #header h1 {
+	margin: 0; 
+	padding: 10px 0; 
+	}
+	   
+.VisualizationMainPage #header A:link {
+    text-decoration:none;
+    color:#ffCC33;
+	}
+	
+	
+.VisualizationMainPage #container {
+	background: #FFFFFF;
+	margin: 0 auto; 
+	text-align: left;
+}
+	
+	
+.VisualizationMainPage #footer  A:visited { text-decoration:none;
+        color:ffcc33; 
+}
+
+.VisualizationMainPage #footer A:link {
+    text-decoration:none;
+	color:#ffCC33;
+}
+
+
+	
+
+.VisualizationMainPage #mainContent h1{
+	padding: 0 20px; 
+	background: #FFFFFF;
+	color:#006633
+}
+
+.VisualizationMainPage #mainContent h2{
+	padding: 0 20px; 
+	background: #FFFFFF;
+	color:#006633
+}
+
+.VisualizationMainPage #mainContent h3{
+	padding: 0 20px; 
+	background: #FFFFFF;
+	color:#006633
+}
+
+
+
+.VisualizationMainPage #footer { 
+	padding: 0 10px;
+    background: #006633; 
+	color:#ffcc33;
+} 
+.VisualizationMainPage #footer p {
+	margin: 0; 	padding: 10px 0; 
+}
+
+EM {text-decoration: bold;}
+
+	 */
+
+	 @charset "utf-8";
+
+	 body {
+		 font: 100% Verdana, Arial, Helvetica, sans-serif;
+		 margin: 0; /* Reset margin and padding */
+		 padding: 0;
+		 text-align: center; /* Center content in older browsers */
+		 color: #333333; /* Dark grey for text */
+		 background-color: #f0f0f0; /* Light grey background */
+	 }
+	 
+	 .VisualizationMainPage #mainContent {
+		 background: #ffffff; /* White background for main content */
+		 border-radius: 8px; /* Smooth rounded corners */
+		 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+	 }
+	 
+	 .VisualizationMainPage #container {
+		 background: #ffffff;
+		 margin: 0 auto;
+		 text-align: left;
+		 padding: 20px;
+		 max-width: 1200px;
+		 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+		 border-radius: 10px;
+	 }
+	 
+	 .VisualizationMainPage #algoControlSection,
+	 .VisualizationMainPage #generalAnimationControlSection {
+		 background: #e0e0e0; /* Light grey for control sections */
+		 color: #333333; /* Dark grey text */
+		 padding: 10px;
+		 margin-bottom: 10px;
+		 border-radius: 8px; /* Rounded corners */
+	 }
+	 
+	 .VisualizationMainPage #header {
+		 background: #4a4a4a; /* Dark grey header */
+		 color: #e6e6e6; /* Light grey text */
+		 padding: 20px;
+		 text-align: center;
+		 border-radius: 8px 8px 0 0; /* Rounded top corners */
+	 }
+	 
+	 .VisualizationMainPage #header h1 {
+		 margin: 0;
+		 font-size: 1.8rem;
+	 }
+	 
+	 .VisualizationMainPage #header a:link,
+	 .VisualizationMainPage #header a:visited {
+		 text-decoration: none;
+		 color: #e6e6e6;
+	 }
+	 
+	 .VisualizationMainPage #footer {
+		 background: #4a4a4a; /* Match header */
+		 color: #e6e6e6; /* Light grey text */
+		 padding: 10px;
+		 text-align: center;
+		 border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+	 }
+	 
+	 .VisualizationMainPage #footer a:link,
+	 .VisualizationMainPage #footer a:visited {
+		 text-decoration: none;
+		 color: #e6e6e6;
+	 }
+	 
+	 .VisualizationMainPage #footer a:hover {
+		 color: #cccccc; /* Slightly lighter grey on hover */
+	 }
+	 
+	 .VisualizationMainPage #mainContent h1,
+	 .VisualizationMainPage #mainContent h2,
+	 .VisualizationMainPage #mainContent h3 {
+		 padding: 10px 20px;
+		 background: #ffffff;
+		 color: #4a4a4a; /* Darker grey text */
+		 border-bottom: 1px solid #dddddd; /* Subtle divider */
+	 }
+	 
+	 .VisualizationMainPage a:link,
+	 .VisualizationMainPage a:visited {
+		 color: #4a90e2; /* Blue for links */
+		 text-decoration: none;
+		 transition: color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+	 }
+	 
+	 .VisualizationMainPage a:hover {
+		 color: #217ac0; /* Darker blue on hover */
+		 transform: scale(1.05); /* Slight zoom effect */
+	 }
+	 
+	 .VisualizationMainPage table {
+		 width: 100%;
+		 border-spacing: 0;
+		 border-collapse: collapse;
+	 }
+	 
+	 .VisualizationMainPage table td,
+	 .VisualizationMainPage table th {
+		 padding: 8px;
+		 border: 1px solid #cccccc; /* Light border */
+		 text-align: center;
+	 }
+	 
+	 .VisualizationMainPage canvas {
+		 display: block;
+		 margin: 20px auto;
+		 border: 2px solid #dddddd; /* Border around canvas */
+		 border-radius: 8px; /* Rounded corners */
+		 background: #f9f9f9; /* Slightly lighter grey */
+	 }
+	 
+	 /* Hover effects for buttons or links in control sections */
+	 .VisualizationMainPage #algoControlSection:hover,
+	 .VisualizationMainPage #generalAnimationControlSection:hover {
+		 background: #d6d6d6; /* Slightly darker grey */
+	 }
+	 
+	 /* Responsive adjustments */
+	 @media (max-width: 768px) {
+		 .VisualizationMainPage #container {
+			 padding: 10px;
+		 }
+	 
+		 .VisualizationMainPage #header h1 {
+			 font-size: 1.5rem;
+		 }
+	 
+		 .VisualizationMainPage #mainContent h1,
+		 .VisualizationMainPage #mainContent h2,
+		 .VisualizationMainPage #mainContent h3 {
+			 font-size: 1.2rem;
+		 }
+	 }
+	 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c1e9f3;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a5cfda;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Python MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='QuizDash.html';">Back</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the output of the following Python code?\n\npython\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)\n",
+                options: ["[1, 2, 3, 4]", "[1, 2, 3]", "[4, 1, 2, 3]", "[1, 2, 3, 4, 4]"],
+                answer: "[1, 2, 3, 4]"
+            },
+            {
+                question: "What is the result of the following expression?\n\npython\nnot (True and False)\n",
+                options: ["True", "False", "None", "Error"],
+                answer: "True"
+            },
+            {
+                question: "How can you open a file in Python for reading only?",
+                options: ["open('file.txt', 'r')", "open('file.txt', 'w')", "open('file.txt', 'a')", "open('file.txt')"],
+                answer: "open('file.txt', 'r')"
+            },
+            {
+                question: "What is the output of the following Python code?\n\npython\nx = {'a': 1, 'b': 2}\nprint(x.get('c', 'default'))\n",
+                options: ["'default'", "None", "KeyError", "''"],
+                answer: "'default'"
+            },
+            {
+                question: "Which of the following is the correct way to create a class in Python?",
+                options: ["class MyClass(object):", "class MyClass[]:", "class MyClass:", "class MyClass(object)[]:"],
+                answer: "class MyClass(object):"
+            },
+            {
+                question: "How do you handle exceptions in Python?",
+                options: ["try/except", "catch/throw", "handle/exception", "try/catch"],
+                answer: "try/except"
+            },
+            {
+                question: "What is the output of the following Python code?\n\npython\nprint(3 ** 2 ** 2)\n",
+                options: ["81", "9", "64", "Error"],
+                answer: "81"
+            },
+            {
+                question: "How can you make a Python function return multiple values?",
+                options: ["By using lists or tuples", "By using multiple return statements", "By using dictionaries", "By using global variables"],
+                answer: "By using lists or tuples"
+            },
+            {
+                question: "What does the self keyword represent in a Python class?",
+                options: ["The class itself", "The instance of the class", "A global variable", "A method in the class"],
+                answer: "The instance of the class"
+            },
+            {
+                question: "Which method is used to remove an item from a list in Python?",
+                options: ["remove()", "delete()", "pop()", "discard()"],
+                answer: "remove()"
+            }
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

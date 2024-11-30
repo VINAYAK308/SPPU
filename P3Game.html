@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Puzzle Game</title>
+    <link rel="stylesheet" href="P3Game.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>Python Puzzle Level  3</h1> -->
+        <h1>Python Braintreasure Level 3</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What will be the output of this function?</p>
+                <pre><code>def greet(name):
+    return f"Hello, {name}"
+
+print(greet("Alice"))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What does this function return?</p>
+                <pre><code>def add(a, b):
+    return a + b
+
+print(add(5, 3))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>class Dog:
+    def __init__(self, name):
+        self.name = name
+    
+    def bark(self):
+        return f"{self.name} says woof!"
+
+dog1 = Dog("Buddy")
+print(dog1.bark())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What is the result of this code?</p>
+                <pre><code>def multiply(x, y=2):
+    return x * y
+
+print(multiply(3))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What does this function return?</p>
+                <pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(4))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>class Car:
+    def __init__(self, brand):
+        self.brand = brand
+    
+    def honk(self):
+        return f"{self.brand} goes beep!"
+
+my_car = Car("Tesla")
+print(my_car.honk())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>Find the result of this function call:</p>
+                <pre><code>def power(x, n):
+    return x ** n
+
+print(power(2, 3))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What is the result of this program?</p>
+                <pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def introduce(self):
+        return f"My name is {self.name}, and I'm {self.age} years old."
+
+p = Person("John", 25)
+print(p.introduce())</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>What is the result of this recursive function?</p>
+                <pre><code>def sum_list(lst):
+    if len(lst) == 0:
+        return 0
+    return lst[0] + sum_list(lst[1:])
+
+print(sum_list([1, 2, 3, 4]))</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+c = Circle(5)
+print(c.area())</code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='PuzzleDash.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="P3Game.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Puzzle Game</title>
+    <link rel="stylesheet" href="J2Game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Java Puzzle Game</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What will be the output of this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What does this code return?</p>
+                <pre><code>public class Main {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(add(5, 3));
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>What is the output of this code?</p>
+                <pre><code>public class Dog {
+    public void bark() {
+        System.out.println("Woof!");
+    }
+    
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.bark();
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>public class Main {
+    public static int multiply(int x, int y) {
+        return x * y;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(multiply(3, 2));
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What does this function return?</p>
+                <pre><code>public class Main {
+    public static int factorial(int n) {
+        return (n == 0) ? 1 : n * factorial(n - 1);
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(factorial(4));
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>public class Car {
+    String brand;
+    
+    public Car(String b) {
+        brand = b;
+    }
+    
+    public void honk() {
+        System.out.println(brand + " goes beep!");
+    }
+    
+    public static void main(String[] args) {
+        Car myCar = new Car("Tesla");
+        myCar.honk();
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>What is the result of this function call?</p>
+                <pre><code>public class Main {
+    public static int power(int x, int n) {
+        return (n == 0) ? 1 : x * power(x, n - 1);
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(power(2, 3));
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What will this program output?</p>
+                <pre><code>public class Person {
+    String name;
+    int age;
+    
+    public Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+    
+    public void introduce() {
+        System.out.println("My name is " + name + " and I'm " + age + " years old.");
+    }
+    
+    public static void main(String[] args) {
+        Person p = new Person("John", 25);
+        p.introduce();
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>What is the result of this recursive function?</p>
+                <pre><code>public class Main {
+    public static int sumList(int[] lst, int size) {
+        return (size == 0) ? 0 : lst[0] + sumList(lst, size - 1);
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+        System.out.println(sumList(arr, arr.length));
+    }
+}</code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>public class Circle {
+    float radius;
+    
+    public Circle(float r) {
+        radius = r;
+    }
+    
+    public float area() {
+        return 3.14f * radius * radius;
+    }
+    
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        System.out.println(c.area());
+    }
+}</code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='PuzzleDash.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="C3Game.js"></script>
+</body>
+</html>

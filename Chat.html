@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6ffe6; 
+
+}
+
+.chatbot {
+    width: 33.8vw;
+    position: absolute;
+    top: 39px;
+    z-index: 13;
+    left: 33%;
+    height: 147px;
+    border-radius: 14px;
+}
+
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    height: 70vh;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #b3ffb3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    margin-left: -7px;
+}
+
+
+
+#chat-header {
+    background-color: #99e699;
+    color: #006600;
+    padding: 0px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #88d888; 
+    border-radius: 5px; 
+    margin: 0; 
+    display: flex;
+    
+}
+
+#chat-header:hover {
+    background-color: #88d888; 
+    color: #ffffff; 
+    border-color: #77c677; 
+}
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ccffcc;
+      
+}
+
+.input-container {
+    display: flex;
+    /* padding: 0;  */
+    border-top: 1px solid #ddd;
+    background-color: #b3ffb3; 
+    position: relative;
+    /* margin: 100px;  */
+    gap:3px;
+    /* width: 100%; */
+    /* margin-top: 330px; */
+    position: bottom;
+    padding: 10px
+    
+   
+}
+
+#user-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #88d888;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 0;
+   
+}
+
+#send-button {
+    padding: 12px 20px;
+    margin-left: 5px;
+    background-color: #99e699;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0; 
+}
+#send-button:hover {
+    background-color: #88d888; 
+}
+
+#send-button:active {
+    transform: scale(0.98);
+}
+
+.user-message, .bot-message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+.user-message {
+    background-color: #b3ffb3;
+    color: #333333;
+}
+
+.bot-message {
+    background-color: #ccffcc; 
+    color: #333333;
+    align-self: flex-start;
+}
+
+.hii {
+    /* width: 109px; */
+    /* top: -122px; */
+    background-color: transparent;
+    left: 10px;
+    position: relative;
+    height: 90px;
+}
+.heading{
+    margin-left: 180px;
+}
+.navlink {
+  color: #fff;
+  background-color: #007BFF;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 4px 0;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+  margin-left: 130px;
+  margin-right: 130px;
+  
+}
+
+.navlink:hover {
+  background-color: #0056b3;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box"> -->
+    <div id="chat-container">
+        <div id="chat-header">
+            <h1 class="heading">CHATBOT</h1>  
+            <img class="hii" src="Chat42.png" alt=""> 
+        </div>
+        
+      
+         <div id="chat-box" class="chat-box">  </div>  
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Ask me anything about coding language...">
+            <button id="send-button">Send</button>
+        </div>
+        <center>
+            <p><a class="navlink" id="Home" onclick="window.location.href='index.php';">Home</a></p>
+        </center>
+    </div>
+    <div>
+    <!-- <center>
+        <p><a class="navlink" id="Home" onclick="window.location.href='index.php';">Home</a></p>
+    </center> -->
+    </div>
+    <!-- </div> -->
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Placeholder for API key - Should be handled securely
+    //    const API_KEY = "AIzaSyAQ-iRnVeP0TQDsW5SqCyWPxFe7LDRCnhk"; //1st
+        // const API_KEY = "AIzaSyDwQ8TKbMhNkB110Z0MHPxLf7-fcEKPivk"//  2nd  Replace this with your actual API key
+        const API_KEY = "AIzaSyAxAJVetySyQCi5Sm3AJN5CM78egGGj7qw"
+        const genAI = new GoogleGenerativeAI(API_KEY);
+
+        async function generateResponse(prompt) {
+            try {
+                
+                // const prompt = "Generate 5 phrases about human Right"
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = await response.text();
+                document.getElementById("chat-box").innerText = text;
+                console.log(text)
+            } catch (error) {
+                console.error("Error generating content:", error);
+                document.getElementById("chat-box").innerText = "Sorry, something went wrong. Please try again.";
+            }
+        }
+
+        document.getElementById("send-button").addEventListener("click", () => {
+           
+            const userInput = document.getElementById("user-input").value;
+            console.log(userInput)
+            generateResponse(userInput) 
+            //   if (userInput.trim() !== "") {
+            //      generateResponse(userInput);
+            //      document.getElementById("user-input").value = ""; // Clear the input field
+            //  }
+        });
+    </script>
+</body>
+</html>
